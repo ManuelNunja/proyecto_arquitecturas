@@ -240,10 +240,31 @@ body .containerSite .copyright {
 }
 body .containerSite .copyright p {
   padding-top: 8px;
-  padding-bottom: 8px;
+  padding-bottom: 0px;
   text-align: center;
   font-size: 12px;
   font-weight: bold;
+}
+body .whatsapp {
+  width: 56px;
+  height: 56px;
+  right: 192px;
+  bottom: 48px;
+  z-index: 999999999;
+  background-color: transparent;
+  display: flex;
+  position: fixed;
+}
+body .carrito {
+  width: 56px;
+  height: 56px;
+  right: 192px;
+  top: 40px;
+  z-index: 999999999;
+  background-color: transparent;
+  display: flex;
+  position: fixed;
+  cursor: pointer;
 }
 
 .carousel-item {
