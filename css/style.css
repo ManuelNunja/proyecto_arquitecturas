@@ -12,7 +12,7 @@ body {
   background-color: whitesmoke !important;
 }
 body .containerSite {
-  width: 72%;
+  width: 1280px;
 }
 body .containerSite header {
   width: 100%;
@@ -22,11 +22,11 @@ body .containerSite header {
   overflow: hidden;
 }
 body .containerSite header nav {
-  width: 800px;
+  width: 1000px;
   height: 80px;
   position: fixed;
   top: 24px;
-  left: calc(50% - 400px);
+  left: calc(50% - 500px);
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -43,7 +43,7 @@ body .containerSite header nav .logo {
   justify-content: center;
 }
 body .containerSite header nav .menu {
-  width: 85%;
+  width: 70%;
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -73,6 +73,32 @@ body .containerSite header nav .menu ul li:hover {
 }
 body .containerSite header nav .menu ul li:hover a {
   color: #ffc629;
+}
+body .containerSite header nav .carrito {
+  width: 64px;
+  height: 64px;
+  background-color: #1542d8;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  border-radius: 50%;
+  animation: animation-carrito 1.7s ease-in-out infinite;
+}
+body .containerSite header nav .carrito img {
+  width: 56px;
+  height: 56px;
+}
+@keyframes animation-carrito {
+  0% {
+    box-shadow: 0px 0px 0px 0px #1542d8;
+  }
+  50% {
+    box-shadow: 0px 0px 10px 5px #1542d8;
+  }
+  100% {
+    box-shadow: 0px 0px 0px 0px #1542d8;
+  }
 }
 body .containerSite header .banner {
   width: 100%;
@@ -254,17 +280,6 @@ body .whatsapp {
   background-color: transparent;
   display: flex;
   position: fixed;
-}
-body .carrito {
-  width: 56px;
-  height: 56px;
-  right: 192px;
-  top: 40px;
-  z-index: 999999999;
-  background-color: transparent;
-  display: flex;
-  position: fixed;
-  cursor: pointer;
 }
 
 .carousel-item {
