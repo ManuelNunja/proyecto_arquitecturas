@@ -188,6 +188,62 @@ body .containerSite section .precios #carouselExampleIndicators .carousel-inner 
 }
 body .containerSite footer {
   width: 100%;
+  height: 192px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  background-color: #1542d8;
+}
+body .containerSite footer aside {
+  width: 33.33%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+body .containerSite footer aside p {
+  font-weight: bold;
+  color: white;
+}
+body .containerSite footer .line {
+  width: 8px;
+  height: 50%;
+  background-color: #ffc629;
+}
+body .containerSite footer .redes {
+  display: flex;
+  flex-direction: column;
+}
+body .containerSite footer .redes .icons {
+  display: flex;
+  gap: 16px;
+}
+body .containerSite footer .metodos {
+  display: flex;
+  flex-direction: column;
+}
+body .containerSite footer .metodos .icons {
+  display: flex;
+  gap: 16px;
+}
+body .containerSite footer .info {
+  display: flex;
+  flex-direction: column;
+  line-height: 8px;
+}
+body .containerSite footer .info .email {
+  color: #ffc629;
+}
+body .containerSite .copyright {
+  width: 100%;
+  background-color: whitesmoke;
+}
+body .containerSite .copyright p {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  text-align: center;
+  font-size: 12px;
+  font-weight: bold;
 }
 
 .carousel-item {
