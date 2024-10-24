@@ -16,8 +16,10 @@ body .containerSite {
 }
 body .containerSite header {
   width: 100%;
+  height: 576px;
   display: flex;
   flex-direction: column;
+  overflow: hidden;
 }
 body .containerSite header nav {
   width: 800px;
@@ -74,7 +76,6 @@ body .containerSite header nav .menu ul li:hover a {
 }
 body .containerSite header .banner {
   width: 100%;
-  height: 500px;
   z-index: -1;
 }
 body .containerSite header .banner #carouselExampleAutoplaying {
@@ -82,6 +83,48 @@ body .containerSite header .banner #carouselExampleAutoplaying {
   overflow: hidden;
 }
 body .containerSite section {
+  width: 100%;
+}
+body .containerSite section .ofertas {
+  width: 100%;
+  height: 300px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  background-color: #1542d8;
+  overflow: hidden;
+}
+body .containerSite section .ofertas .left {
+  width: 40%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+body .containerSite section .ofertas .left h3 {
+  color: white;
+}
+body .containerSite section .ofertas .left p {
+  color: white;
+}
+body .containerSite section .ofertas .left button {
+  width: 200px;
+  height: 50px;
+  border-radius: 8px;
+  background-color: #ffc629;
+  border: none;
+  font-weight: bold;
+  color: #1542d8;
+}
+body .containerSite section .ofertas .right {
+  width: 60%;
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  justify-content: start;
+}
+body .containerSite section .ofertas .right img {
   width: 100%;
 }
 body .containerSite footer {
