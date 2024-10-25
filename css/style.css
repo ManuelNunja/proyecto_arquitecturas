@@ -322,6 +322,87 @@ body .containerSite section .conoceme2 aside:nth-child(2) {
 body .containerSite section .conoceme2 aside:nth-child(1) {
   width: 50%;
 }
+body .containerSite section .mapa {
+  display: flex;
+  flex-direction: column;
+  background-color: #ffc629;
+}
+body .containerSite section .mapa h3 {
+  width: 100%;
+  text-align: center;
+  color: #1542d8;
+}
+body .containerSite section .mapa .sedes {
+  height: 80px;
+  display: flex;
+  flex-direction: row;
+  gap: 24px;
+  align-items: center;
+  justify-content: center;
+}
+body .containerSite section .mapa .sedes a {
+  background-color: #1542d8;
+  padding: 8px;
+  border-radius: 8px;
+  cursor: pointer;
+  color: #ffc629;
+  text-decoration: none;
+  font-weight: bold;
+}
+body .containerSite section .horario {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: #1542d8;
+  padding: 16px;
+}
+body .containerSite section .horario h3 {
+  width: 100%;
+  text-align: center;
+  color: #ffc629;
+}
+body .containerSite section .horario .dias {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 24px;
+}
+body .containerSite section .horario .dias div {
+  width: 320px;
+  background-color: #ffc629;
+  padding: 8px;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+body .containerSite section .horario .dias div .hora {
+  padding-right: 10px;
+}
+body .containerSite section .horario .dias div .activo {
+  display: none;
+  border-radius: 50%;
+  height: 8px;
+  width: 8px;
+  background-color: red;
+  padding: 10px;
+  animation: animation_activo 1s ease-in-out infinite;
+}
+@keyframes animation_activo {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
 body .containerSite footer {
   width: 100%;
   height: 192px;

@@ -10,7 +10,7 @@
 </head>
 <body>
     <div class="containerSite">
-        <header>
+        <header class="header">
             <nav>
                 <div class="logo">
                     <img src="images/icon/logo1.png" width="48px">
@@ -27,6 +27,30 @@
                 <div></div>
             </nav>
         </header>
+        <section>
+            <div class="mapa">
+                <h3>Nuestras Sedes</h3>
+                <iframe id="mapFrame" class="map_part" width="100%"  height="450"  frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com/maps?width=100%&amp;height=100%&amp;hl=en&amp;q=peru lima los olivos&amp;t=&amp;z=14&amp;ie=UTF8&amp;iwloc=B&amp;output=embed">Powered by <a href="https://embedgooglemaps.com">embed google maps</a> and <a href="https://utaninkomst.se/">låna pengar utan inkomst</a></iframe>
+                <div class="sedes">
+                    <a class="map-link" onclick="changeLocation('MercadoCovida')">Los Olivos: Mercado Covida</a>
+                    <a class="map-link" onclick="changeLocation('Izaguirre')">Los Olivos: Izaguirre</a>
+                    <a class="map-link" onclick="changeLocation('CentroLima')">Centro de Lima</a>
+                    <a class="map-link" onclick="changeLocation('MercadoSanJose')">Jesus Maria: Mercado San Jose</a>
+                </div>
+            </div>
+            <div class="horario">
+                <h3>Hoarios de atencion</h3>
+                <div class="dias">
+                    <div><span class="dia">Lunes:</span><span class="hora">7:00 am - 21:00 pm</span><span class="activo"></span></div>
+                    <div><span class="dia">Martes:</span><span class="hora">7:00 am - 21:00 pm</span><span class="activo"></span></div>
+                    <div><span class="dia">Miercoles:</span><span class="hora">7:00 am - 21:00 pm</span><span class="activo"></span></div>
+                    <div><span class="dia">Jueves:</span><span class="hora">7:00 am - 21:00 pm</span><span class="activo"></span></div>
+                    <div><span class="dia">Viernes:</span><span class="hora">7:00 am - 21:00 pm</span><span class="activo"></span></div>
+                    <div><span class="dia">Sabado:</span><span class="hora">7:00 am - 23:00 pm</span><span class="activo"></span></div>
+                    <div><span class="dia">Domingo:</span><span class="hora">7:00 am - 21:00 pm</span><span class="activo"></span></div>
+                </div>
+            </div>
+        </section>
         <footer>
             <aside class="redes">
                 <p>¡Sigueme!</p>
@@ -176,5 +200,25 @@
             });
         });
     </script>
+    <script>
+        function changeLocation(city) {
+          let mapFrame = document.getElementById('mapFrame');
+          let locations = {
+            'MercadoCovida': 'https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d40700.47901874965!2d-77.07654988379683!3d-11.995009146944147!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9105ce5e584063b5%3A0x426abbb513712540!2sMercado%20COVIDA!5e0!3m2!1sen!2sus!4v1729897143366!5m2!1sen!2sus',
+            'MercadoSanJose': 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3901.555130029367!2d-77.05194662579319!3d-12.074100142408536!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9105c8e4c8a5dc27%3A0x6fd4e17d75ac1b79!2sSan%20Jose%20Market!5e0!3m2!1sen!2sus!4v1729897520288!5m2!1sen!2sus',
+            'Izaguirre': 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d8879.509783245381!2d-77.07632176072445!3d-11.991655819961318!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9105cf8da11e7cd3%3A0x97a2bacbba10406d!2sizaguirre!5e0!3m2!1sen!2sus!4v1729897764549!5m2!1sen!2sus',
+            'CentroLima': 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d975.4911281751185!2d-77.03220953048476!3d-12.045962687687219!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9105c8b5dbf074d1%3A0xa86e86c987fa9751!2sJir%C3%B3n%20Callao%20114%2C%20Lima%2015001%2C%20Peru!5e0!3m2!1sen!2sus!4v1729897967367!5m2!1sen!2sus'
+          };
+          mapFrame.src = locations[city];
+        }
+
+        $(document).ready(function() {
+            $(".dias .activo").hide();
+            const dayIndex = new Date().getDay();
+            console.log("dayIndex: ", dayIndex);
+            $(".dias div").eq(dayIndex - 1).find(".activo").fadeIn();
+        });
+
+      </script>
 </body>
 </html>
