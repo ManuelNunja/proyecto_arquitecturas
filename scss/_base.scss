@@ -11,12 +11,17 @@ body{
     background-color: whitesmoke !important;
     .containerSite{
         width: calc($pxSite * 160);
-        header{
+        .header{
             width: 100%;
-            height: calc($pxSite * 72);
+            height: calc($pxSite * 18);
             display: flex;
             flex-direction: column;
             overflow: hidden;
+            background-color: $color_azul;
+            &--home{
+                height: calc($pxSite * 72);
+                background-color: transparent;
+            }
             nav{
                 width: 1000px;
                 height: 80px;
@@ -254,6 +259,83 @@ body{
                         }
                     }
                 }
+            }
+            .conoceme1{
+                display: flex;
+                flex-direction: row;
+                z-index: 99999;
+                background-color: $color_amarillo;
+                aside{
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                    background-color: $color_azul;
+                    h3{
+                        width: 100%;
+                        color: $color_amarillo;
+                        text-align: center;
+                        text-decoration: underline;
+                    }
+                    p{
+                        width: 100%;
+                        padding: calc($pxSite * 3);
+                        text-align: center;
+                        line-height: calc($pxSite *4);
+                        color: white;
+                    }
+                    img{
+                        width: 100%;
+                        height: 460px;
+                        border-radius: 0 0 50px 0;
+                    }
+                    &:nth-child(1){
+                        width: 50%;
+                        border-radius: 0 0 0 50px;
+                    }   
+                    &:nth-child(2){
+                        width: 50%;
+                        border-radius: 0 0 50px 0;
+                    }  
+                }
+                 
+            }
+            .conoceme2{
+                background-color: $color_amarillo;
+                display: flex;
+                flex-direction: row;
+                //padding-top: 24px;
+                //margin-top: -100px;
+                z-index: -1;
+                overflow: hidden;
+                aside{
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                    h3{
+                        width: 100%;
+                        color: $color_azul;
+                        text-align: center;
+                        text-decoration: underline;
+                    }
+                    p{
+                        width: 100%;
+                        padding: calc($pxSite * 3);
+                        text-align: center;
+                        line-height: calc($pxSite *4);
+                        color: black;
+                    }
+                    img{
+                        width: 100%;
+                        height: 460px;
+                    }
+                    &:nth-child(2){
+                        width: 50%;
+                    }   
+                    &:nth-child(1){
+                        width: 50%;
+                    }  
+                }
+                 
             }
         }
         footer{

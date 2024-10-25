@@ -14,14 +14,19 @@ body {
 body .containerSite {
   width: 1280px;
 }
-body .containerSite header {
+body .containerSite .header {
   width: 100%;
-  height: 576px;
+  height: 144px;
   display: flex;
   flex-direction: column;
   overflow: hidden;
+  background-color: #1542d8;
 }
-body .containerSite header nav {
+body .containerSite .header--home {
+  height: 576px;
+  background-color: transparent;
+}
+body .containerSite .header nav {
   width: 1000px;
   height: 80px;
   position: fixed;
@@ -36,46 +41,46 @@ body .containerSite header nav {
   padding: 8px;
   border: solid 2px #1542d8;
 }
-body .containerSite header nav .logo {
+body .containerSite .header nav .logo {
   width: 15%;
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: center;
 }
-body .containerSite header nav .menu {
+body .containerSite .header nav .menu {
   width: 70%;
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: center;
 }
-body .containerSite header nav .menu ul {
+body .containerSite .header nav .menu ul {
   display: flex;
   gap: 32px;
   list-style: none;
   margin: 0;
   padding: 0;
 }
-body .containerSite header nav .menu ul li {
+body .containerSite .header nav .menu ul li {
   padding-left: 16px;
   padding-right: 16px;
   padding-top: 8px;
   padding-bottom: 8px;
 }
-body .containerSite header nav .menu ul li a {
+body .containerSite .header nav .menu ul li a {
   color: #1542d8;
   font-size: 16px;
   text-decoration: none;
   font-weight: bold;
 }
-body .containerSite header nav .menu ul li:hover {
+body .containerSite .header nav .menu ul li:hover {
   background-color: #1542d8;
 }
-body .containerSite header nav .menu ul li:hover a {
+body .containerSite .header nav .menu ul li:hover a {
   color: #ffc629;
 }
-body .containerSite header nav .carrito {
+body .containerSite .header nav .carrito {
   width: 64px;
   height: 64px;
   background-color: #1542d8;
@@ -86,7 +91,7 @@ body .containerSite header nav .carrito {
   border-radius: 50%;
   animation: animation-carrito 1.7s ease-in-out infinite;
 }
-body .containerSite header nav .carrito img {
+body .containerSite .header nav .carrito img {
   width: 56px;
   height: 56px;
 }
@@ -101,11 +106,11 @@ body .containerSite header nav .carrito img {
     box-shadow: 0px 0px 0px 0px #1542d8;
   }
 }
-body .containerSite header .banner {
+body .containerSite .header .banner {
   width: 100%;
   z-index: -1;
 }
-body .containerSite header .banner #carouselExampleAutoplaying {
+body .containerSite .header .banner #carouselExampleAutoplaying {
   height: 576px;
   overflow: hidden;
 }
@@ -243,6 +248,79 @@ body .containerSite section .precios #carouselExampleIndicators .carousel-inner 
 }
 body .containerSite section .precios #carouselExampleIndicators .carousel-inner .carousel-item .carousel-item-content .product .options button:active {
   background-color: white;
+}
+body .containerSite section .conoceme1 {
+  display: flex;
+  flex-direction: row;
+  z-index: 99999;
+  background-color: #ffc629;
+}
+body .containerSite section .conoceme1 aside {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background-color: #1542d8;
+}
+body .containerSite section .conoceme1 aside h3 {
+  width: 100%;
+  color: #ffc629;
+  text-align: center;
+  text-decoration: underline;
+}
+body .containerSite section .conoceme1 aside p {
+  width: 100%;
+  padding: 24px;
+  text-align: center;
+  line-height: 32px;
+  color: white;
+}
+body .containerSite section .conoceme1 aside img {
+  width: 100%;
+  height: 460px;
+  border-radius: 0 0 50px 0;
+}
+body .containerSite section .conoceme1 aside:nth-child(1) {
+  width: 50%;
+  border-radius: 0 0 0 50px;
+}
+body .containerSite section .conoceme1 aside:nth-child(2) {
+  width: 50%;
+  border-radius: 0 0 50px 0;
+}
+body .containerSite section .conoceme2 {
+  background-color: #ffc629;
+  display: flex;
+  flex-direction: row;
+  z-index: -1;
+  overflow: hidden;
+}
+body .containerSite section .conoceme2 aside {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+body .containerSite section .conoceme2 aside h3 {
+  width: 100%;
+  color: #1542d8;
+  text-align: center;
+  text-decoration: underline;
+}
+body .containerSite section .conoceme2 aside p {
+  width: 100%;
+  padding: 24px;
+  text-align: center;
+  line-height: 32px;
+  color: black;
+}
+body .containerSite section .conoceme2 aside img {
+  width: 100%;
+  height: 460px;
+}
+body .containerSite section .conoceme2 aside:nth-child(2) {
+  width: 50%;
+}
+body .containerSite section .conoceme2 aside:nth-child(1) {
+  width: 50%;
 }
 body .containerSite footer {
   width: 100%;
