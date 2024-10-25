@@ -1,0 +1,501 @@
+*{
+    margin: 0;
+    padding: 0;
+    transition: all 0.35s;
+}
+body{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: whitesmoke !important;
+    .containerSite{
+        width: calc($pxSite * 160);
+        header{
+            width: 100%;
+            height: calc($pxSite * 72);
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+            nav{
+                width: 1000px;
+                height: 80px;
+                position: fixed;
+                top: 24px;
+                left: calc(50% - 500px);
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                justify-content: center;
+                background-color: $color_amarillo;
+                border-radius: 8px;
+                padding: 8px;
+                border: solid 2px $color_azul;
+                .logo{
+                    width: 15%;
+                    display: flex;
+                    flex-direction: row;
+                    align-items: center;
+                    justify-content: center;
+                }
+                .menu{
+                    width: 70%;
+                    display: flex;
+                    flex-direction: row;
+                    align-items: center;
+                    justify-content: center;
+                    ul{
+                        display: flex;
+                        gap: 32px;
+                        list-style: none;
+                        margin: 0;
+                        padding: 0;
+                        li{
+                            padding-left: 16px;
+                            padding-right: 16px;
+                            padding-top: 8px;
+                            padding-bottom: 8px;
+                            a{
+                                color: $color_azul;
+                                font-size: 16px;
+                                text-decoration: none;
+                                font-weight: bold;
+                            }
+                            &:hover{
+                                background-color: $color_azul;
+                                a{
+                                    color: $color_amarillo;
+                                }
+                            }
+                        }
+                    }
+                }
+                .carrito{
+                    width: calc($pxSite * 8);
+                    height: calc($pxSite * 8);
+                    //right: calc($pxSite * 56);
+                    //top: calc($pxSite * 3.5);
+                    //z-index: 999999999;
+                    background-color: $color_azul;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    //position: fixed;
+                    cursor: pointer;
+                    border-radius: 50%;
+                    animation: animation-carrito 1.7s ease-in-out infinite;
+                    img{
+                        width: 56px;
+                        height: 56px;
+                    }
+                    @keyframes animation-carrito {
+                        0%{
+                            box-shadow: 0px 0px 0px 0px $color_azul;
+                        }
+                        50%{
+                            box-shadow: 0px 0px 10px 5px $color_azul;
+                        }
+                        100%{
+                            box-shadow: 0px 0px 0px 0px $color_azul;
+                        }
+                    }
+                }
+            }
+            .banner{
+                width: 100%;
+                z-index: -1;
+                #carouselExampleAutoplaying{
+                    height: calc($pxSite * 72);
+                    overflow: hidden;
+                }
+            }
+        }
+        section{
+            width: 100%;
+            .ofertas{
+                width: 100%;
+                height: 300px;
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                justify-content: center;
+                background-color: $color_azul;
+                overflow: hidden;
+                .left{
+                    width: 40%;
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    justify-content: center;
+                    h3{
+                        color: white;
+                    }
+                    p{
+                        color: white;
+                        line-height: calc($pxSite * 2);
+                    }
+                    button{
+                        width: 200px;
+                        height: 50px;
+                        border-radius: $pxSite;
+                        background-color: $color_amarillo;
+                        border: none;
+                        font-weight: bold;
+                        color: $color_azul;
+                    }
+                }
+                .right{
+                    width: 60%;
+                    display: flex;
+                    flex-direction: column;
+                    align-items: start;
+                    justify-content: start;
+                    img{
+                        width: 100%;
+                    }
+                }
+            }
+            .precios{
+                background-color: $color_amarillo;
+                h3{
+                    width: 100%;
+                    text-align: center;
+                    padding: calc($pxSite * 2);
+                    //background-color: $color_azul;
+                    color: $color_azul;
+                }
+                #carouselExampleIndicators{
+                    .carousel-indicators{
+                        padding-top: calc($pxSite * 2) !important;
+                        position: relative;
+                        button{
+                            background-color: $color_azul;
+                        }
+                    }
+                    button{
+                        .carousel-control-prev-icon{
+                            background-color: $color_azul;
+                            border-radius: $pxSite;
+                        }
+                        .carousel-control-next-icon{
+                            background-color: $color_azul;
+                            border-radius: $pxSite;
+                        }
+                    }
+                    .carousel-control-prev{
+                        width: 80px;
+                        left: 30px;                            
+                    }
+                    .carousel-control-next{
+                        width: 80px;
+                        right: 30px;
+                    }
+                    .carousel-inner{
+                        .carousel-item{
+                            .carousel-item-content{
+                                display: flex;
+                                flex-direction: row;
+                                align-items: center;
+                                justify-content: center;
+                                gap: calc($pxSite * 2);
+                                .product{
+                                    width: calc($pxSite * 24);
+                                    height: calc($pxSite * 24);
+                                    background-color: $color_azul;
+                                    display: flex;
+                                    flex-direction: column;
+                                    align-items: center;
+                                    justify-content: start;
+                                    padding: calc($pxSite * 3);
+                                    border-radius: $pxSite;
+                                    //cursor: pointer;
+                                    img{
+                                        padding-bottom: calc($pxSite * 2);
+                                    }
+                                    p{
+                                        text-align: center;
+                                        margin: 0;
+                                        color: white;
+                                    }
+                                    .options{
+                                        width: 100%;
+                                        height: calc($pxSite * 4);
+                                        display: flex;
+                                        flex-direction: row;
+                                        gap: 4px;
+                                        .price{
+                                            width: 90%;
+                                            background-color: $color_amarillo;
+                                            padding-top: calc($pxSite * 0.5);
+                                            padding-left: calc($pxSite * 0);
+                                            padding-right: calc($pxSite * 0);
+                                            border-radius: $pxSite;
+                                            color: $color_azul;
+                                            font-weight: bold;
+                                        }
+                                        button{
+                                            width: calc($pxSite * 4);
+                                            height: calc($pxSite * 4);
+                                            background-image: url('../images/icon/agregar.png');
+                                            background-position: 50% 50%;
+                                            background-repeat: no-repeat;
+                                            background-size: calc($pxSite * 3);
+                                            background-color: transparent;
+                                            border: none;
+                                            border-radius: 50%;
+                                            &:active{
+                                                background-color: white;
+                                            }
+                                        }
+                                    }
+                                    
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        footer{
+            width: 100%;
+            height: calc($pxSite * 24);
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+
+            justify-content: center;
+            //padding-top: calc($pxSite * 2);
+            //padding-bottom: calc($pxSite * 16);
+            background-color: $color_azul;
+            //margin-top: -20px;
+            //padding: 0;
+            aside{
+                width: 33.33%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                p{
+                    font-weight: bold;
+                    color: white;
+                    //letter-spacing: calc($pxSite / 2);
+                }
+            }
+            .line{
+                width: calc($pxSite * 1);
+                height: 50%;
+                background-color: $color_amarillo;
+            }
+            .redes{
+                display: flex;
+                flex-direction: column;
+                .icons{
+                    display: flex;
+                    gap: calc($pxSite * 2);
+                }
+            }
+            .metodos{
+                display: flex;
+                flex-direction: column;
+                .icons{
+                    display: flex;
+                    gap: calc($pxSite * 2);
+                }
+            }
+            .info{
+                display: flex;
+                flex-direction: column;
+                line-height: calc($pxSite * 1);
+                .email{
+                    color: $color_amarillo;
+                }
+            }
+        }
+        .copyright{
+            width: 100%;
+            background-color: whitesmoke;
+            p{
+                padding-top: calc($pxSite * 1);
+                padding-bottom: calc($pxSite * 0);
+                text-align: center;
+                font-size: 12px;
+                font-weight: bold;
+            }
+        }
+    }
+    .whatsapp{
+        width: calc($pxSite * 7);
+        height: calc($pxSite * 7);
+        right: calc($pxSite * 24);
+        bottom: calc($pxSite * 6);
+        z-index: 999999999;
+        background-color: transparent;
+        display: flex;
+        position: fixed;
+    }
+    .carritoDetalle{
+        position: fixed;
+        display: none;
+        flex-direction: column;
+        align-items: center;
+        justify-content: start;
+        width: calc($pxSite * 50);
+        height: calc($pxSite * 50);
+        background-color: $color_amarillo;
+        border: solid 2px $color_azul;
+        top: 10%;
+        left: $pxSite;
+        border-radius: $pxSite;
+        padding: $pxSite;
+        .header{
+            width: 100%;
+            top: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            border-radius: $pxSite $pxSite 0 0;
+            background-color: transparent;
+            //border: solid 2px $color_azul;
+            p{
+                width: 100%;
+                height: 100%;
+                text-align: center;
+                color: $color_azul;
+                font-weight: bold;
+                padding-top: $pxSite;
+                text-decoration: underline;
+            }
+        }
+        .lista{
+            width: 100%;
+            height: calc($pxSite * 35);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: calc($pxSite * 1);
+            background-color: transparent;
+            padding-top: $pxSite;
+            padding-bottom: $pxSite;
+            overflow: hidden;
+            overflow-y: scroll;
+            padding-bottom: calc($pxSite * 2);
+            &::-webkit-scrollbar {
+                width: 4px;
+            }
+            &::-webkit-scrollbar-track {
+                background: #f1f1f1;
+                border-radius: 0px;
+            }
+            &::-webkit-scrollbar-thumb {
+                background-color: rgb(168, 168, 168);
+                border-radius: 0px;
+            }
+            &::-webkit-scrollbar-thumb:hover {
+                background-color: rgb(139, 139, 139);
+                cursor: auto;
+            }
+            .item{
+                width: 96%;
+                height: calc($pxSite * 7);
+                display: flex;
+                flex-direction: row;
+                border: solid 2px $color_azul;
+                border-radius: 0 0 $pxSite $pxSite;
+                div{
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    justify-content: center;
+                    p{
+                        padding-top: calc($pxSite * 2);
+                        font-weight: bold;
+                    }
+                }
+                .image{
+                    width: 20%;
+                    border-right: solid 2px $color_azul;
+                }
+                .description{
+                    width: 20%;
+                    border-right: solid 2px $color_azul;
+                    p{
+                        font-weight: bold;
+                        font-size: 12px;
+                        text-align: center;
+                    }
+                }
+                .price{
+                    width: 20%;
+                    border-right: solid 2px $color_azul;
+                    p{
+                        font-weight: bold;
+                        font-size: 12px;
+                        text-align: center;
+                    }
+                }
+                .amount{
+                    width: 10%;
+                    border-right: solid 2px $color_azul;
+                    p{
+                        font-weight: bold;
+                        font-size: 12px;
+                        text-align: center;
+                    }
+                }
+                .subtotal{
+                    width: 20%;
+                    border-right: solid 2px $color_azul;
+                    p{
+                        font-weight: bold;
+                        font-size: 12px;
+                        text-align: center;
+                    }
+                }
+                .delete{
+                    width: 10%;
+                    button{
+                        width: calc($pxSite * 4);
+                        height: calc($pxSite * 4);
+                        background-image: url('../images/icon/delete.png');
+                        background-position: 50% 50%;
+                        background-repeat: no-repeat;
+                        background-size: calc($pxSite * 3);
+                        background-color: transparent;
+                        border: none;
+                    }
+                }
+            }
+        }
+        .totales{
+            //position: absolute;
+            width: 100%;
+            bottom: 0;
+            background-color: $color_azul;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            border-radius: $pxSite;
+            cursor: pointer;
+            &:hover{
+                background-color: green;
+            }
+            p{
+                width: 100%;
+                height: 100%;
+                text-align: center;
+                color: white;
+                font-weight: bold;
+                padding-top: calc($pxSite * 2);
+            }
+        }
+    }
+}
+
+.carousel-item{
+    display: flex;
+    background-color: transparent;
+    flex-direction: row !important;
+    align-items: center !important;
+    justify-content: center !important;
+}
