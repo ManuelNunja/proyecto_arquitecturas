@@ -6,6 +6,7 @@
     <title>Inicio</title>
     <link href="css/style.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
 </head>
 <body>
     <div class="containerSite">
@@ -57,64 +58,93 @@
         <section>
             <div class="precios">
                 <h3>Precios</h3>
-
                 <div id="carouselExampleIndicators" class="carousel slide">
                     <div class="carousel-inner">
                         <div class="carousel-item active">
                             <div class="carousel-item-content">
-                                <div class="product">
+                                <div id="prod1" class="product">
                                     <img src="images/icon/prod1.png" width="80px" alt="...">
                                     <p class="name">Carne</p>
-                                    <p class="price">S/. 3.20</p>                                
+                                    <div class="options">
+                                        <p class="price">S/. <span class="value">3.20</span></p> 
+                                        <button></button>
+                                    </div>                   
                                 </div>
-                                <div class="product">
+                                <div id="prod2" class="product">
                                     <img src="images/icon/prod2.png" width="80px" alt="...">
                                     <p class="name">Fruta</p>
-                                    <p class="price">S/. 5.00</p>                                
+                                    <div class="options">
+                                        <p class="price">S/. <span class="value">5.00</span></p>                           
+                                        <button></button>
+                                    </div>
                                 </div>
-                                <div class="product">
+                                <div id="prod3" class="product">
                                     <img src="images/icon/prod3.png" width="80px" alt="...">
                                     <p class="name">Shampoo pet</p>
-                                    <p class="price">S/. 8.50</p>                                
+                                    <div class="options">
+                                        <p class="price">S/. <span class="value">8.50</span></p>   
+                                        <button></button>
+                                    </div>                      
                                 </div>
-                                <div class="product">
+                                <div id="prod4" class="product">
                                     <img src="images/icon/prod4.png" width="80px" alt="...">
                                     <p class="name">Arroz</p>
-                                    <p class="price">S/. 5.50</p>                                
+                                    <div class="options">
+                                        <p class="price">S/. <span class="value">5.50</span></p>  
+                                        <button></button>
+                                    </div>
                                 </div>
-                                <div class="product">
+                                <div id="prod5" class="product">
                                     <img src="images/icon/prod5.png" width="80px" alt="...">
                                     <p class="name">Aceite</p>
-                                    <p class="price">S/. 8.50</p>                                
+                                    <div class="options">
+                                        <p class="price">S/. <span class="value">8.50</span></p>                                
+                                        <button></button>
+                                    </div>
                                 </div>
                             </div>
                           </div>
                           <div class="carousel-item">
                             <div class="carousel-item-content">
-                                <div class="product">
+                                <div id="prod6" class="product">
                                     <img src="images/icon/prod6.png" width="80px" alt="...">
                                     <p class="name">Leche Fresca</p>
-                                    <p class="price">S/. 5.40</p>                                
+                                    <div class="options">
+                                        <p class="price">S/. <span class="value">5.40</span></p>                                
+                                        <button></button>
+                                    </div>
                                 </div>
-                                <div class="product">
+                                <div id="prod7" class="product">
                                     <img src="images/icon/prod7.png" width="80px" alt="...">
                                     <p class="name">Pan</p>
-                                    <p class="price">S/. 3.00</p>                                
+                                    <div class="options">
+                                        <p class="price">S/. <span class="value">3.00</span></p>                                
+                                        <button></button>
+                                    </div>
                                 </div>
-                                <div class="product">
+                                <div id="prod8" class="product">
                                     <img src="images/icon/prod8.png" width="80px" alt="...">
                                     <p class="name">Agua</p>
-                                    <p class="price">S/. 2.20</p>                                
+                                    <div class="options">
+                                        <p class="price">S/. <span class="value">2.20</span></p>                                
+                                        <button></button>
+                                    </div>
                                 </div>
-                                <div class="product">
+                                <div id="prod9" class="product">
                                     <img src="images/icon/prod9.png" width="80px" alt="...">
                                     <p class="name">Gaseosa</p>
-                                    <p class="price">S/. 5.80</p>                                
+                                    <div class="options">
+                                        <p class="price">S/. <span class="value">5.80</span></p>                                
+                                        <button></button>
+                                    </div>
                                 </div>
-                                <div class="product">
+                                <div id="prod10" class="product">
                                     <img src="images/icon/prod10.png" width="80px" alt="...">
                                     <p class="name">Vegetales</p>
-                                    <p class="price">S/. 1.40</p>                                
+                                    <div class="options">
+                                        <p class="price">S/. <span class="value">1.40</span></p>   
+                                        <button></button>
+                                    </div>         
                                 </div>
                             </div>
                           </div>
@@ -132,77 +162,6 @@
                         <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
                       </div>
                 </div>
-
-                <!--<div id="carouselExampleFade" class="carousel slide">
-                    <div class="carousel-inner">
-                      <div class="carousel-item active">
-                        <div class="carousel-item-content">
-                            <div class="product">
-                                <img src="images/icon/prod1.png" width="80px" alt="...">
-                                <p class="name">Carne</p>
-                                <p class="price">S/. 3.20</p>                                
-                            </div>
-                            <div class="product">
-                                <img src="images/icon/prod2.png" width="80px" alt="...">
-                                <p class="name">Fruta</p>
-                                <p class="price">S/. 5.00</p>                                
-                            </div>
-                            <div class="product">
-                                <img src="images/icon/prod3.png" width="80px" alt="...">
-                                <p class="name">Shampoo pet</p>
-                                <p class="price">S/. 8.50</p>                                
-                            </div>
-                            <div class="product">
-                                <img src="images/icon/prod4.png" width="80px" alt="...">
-                                <p class="name">Arroz</p>
-                                <p class="price">S/. 5.50</p>                                
-                            </div>
-                            <div class="product">
-                                <img src="images/icon/prod5.png" width="80px" alt="...">
-                                <p class="name">Aceite</p>
-                                <p class="price">S/. 8.50</p>                                
-                            </div>
-                        </div>
-                      </div>
-                      <div class="carousel-item">
-                        <div class="carousel-item-content">
-                            <div class="product">
-                                <img src="images/icon/prod6.png" width="80px" alt="...">
-                                <p class="name">Leche Fresca</p>
-                                <p class="price">S/. 5.40</p>                                
-                            </div>
-                            <div class="product">
-                                <img src="images/icon/prod7.png" width="80px" alt="...">
-                                <p class="name">Pan</p>
-                                <p class="price">S/. 3.00</p>                                
-                            </div>
-                            <div class="product">
-                                <img src="images/icon/prod8.png" width="80px" alt="...">
-                                <p class="name">Agua</p>
-                                <p class="price">S/. 2.20</p>                                
-                            </div>
-                            <div class="product">
-                                <img src="images/icon/prod9.png" width="80px" alt="...">
-                                <p class="name">Gaseosa</p>
-                                <p class="price">S/. 5.80</p>                                
-                            </div>
-                            <div class="product">
-                                <img src="images/icon/prod10.png" width="80px" alt="...">
-                                <p class="name">Vegetales</p>
-                                <p class="price">S/. 1.40</p>                                
-                            </div>
-                        </div>
-                      </div>
-                    </div>
-                    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="prev">
-                      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                      <span class="visually-hidden">Previous</span>
-                    </button>
-                    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="next">
-                      <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                      <span class="visually-hidden">Next</span>
-                    </button>
-                </div>-->
             </div>
         </section>
         <footer>
@@ -238,6 +197,145 @@
             <img src="images/icon/whatsapp.png" width="56px">
         </a>
     </div>
+    <div class="carritoDetalle">
+        <div class="header">
+            <p>Detalle Productos</p>
+        </div>
+        <div class="lista">
+            
+        </div>
+        <div class="totales">
+            <p>Pagar: S/. 0.00</p>
+        </div>
+    </div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <script>
+        $(document).ready(function() {
+            $('.carrito').click(function() {
+                if ($('.carritoDetalle').is(':hidden')) {
+                    var position = $(this).offset();
+                    $('.carritoDetalle')
+                        .css({
+                            position: 'fixed',
+                            display: 'flex',
+                            top: 110,
+                            left: position.left - 285,
+                            zIndex: 1000
+                        })
+                        .fadeIn();
+                } else {
+                    $('.carritoDetalle').fadeOut();
+                }
+            });
+
+            $(window).resize(function() {
+                if ($('.carritoDetalle').is(':visible')) {
+                    var position = $('.carrito').offset();
+                    $('.carritoDetalle').css({
+                        position: 'fixed',
+                        display: 'flex',
+                        top: 110,
+                        left: position.left - 285,
+                        zIndex: 1000
+                    });
+                }
+            });
+            
+            $('.product button').click(function() {
+                var product = $(this).closest('.product');
+                var productId = product.attr('id');
+                var imgSrc = product.find('img').attr('src');
+                var productName = product.find('.name').text();
+                var productPrice = product.find('.price .value').text();
+                
+                var existingItem = $('.carritoDetalle .lista .item').filter(function() {
+                    return $(this).find('.description p').text() === productName; // Comparar por nombre
+                });
+
+                if (existingItem.length > 0) {
+                    console.log("existe ")
+                    var currentAmount = parseInt(existingItem.find('.amount p .value').text());
+                    console.log("currentAmount: ", currentAmount);
+                    existingItem.find('.amount p .value').text(currentAmount + 1); // Incrementar cantidad
+
+                    var totalPrice = parseFloat(existingItem.find('.subtotal p .value').text());
+                    console.log("totalPrice: ",totalPrice);
+                    existingItem.find('.subtotal p .value').text((totalPrice + parseFloat(productPrice)).toFixed(2)); // Actualizar precio
+
+                }else {
+                    var newItem = `
+                        <div class="item">
+                            <div class="image">
+                                <img src="${imgSrc}" width="32px">
+                            </div>
+                            <div class="description">
+                                <p>${productName}</p>
+                            </div>
+                            <div class="price">
+                                <p><span class="symbol">S/. </span><span class="value">${productPrice}</span></p>
+                            </div>
+                            <div class="amount">
+                                <p><span class="value">1</span></p>
+                            </div>
+                            <div class="subtotal">
+                                <p><span class="symbol">S/. </span><span class="value">${productPrice}</span></p>
+                            </div>
+                            <div class="delete">
+                                <button class="delete-btn"></button>
+                            </div>
+                        </div>
+                    `;
+
+                    $('.carritoDetalle .lista').append(newItem);
+                }
+
+                
+                updateTotal();
+            });
+
+            function updateTotal() {
+                var total = 0;
+                $('.carritoDetalle .lista .item').each(function() {
+                    var priceText = $(this).find('.price .value').text();
+                    var price = parseFloat(priceText.replace(/[^\d.-]/g, '')); // Convertir a número
+                    var amount = parseInt($(this).find('.amount .value').text()); // Obtener cantidad
+                    //console.log("amount: ", amount);
+                    total += price * amount; // Sumar al total
+                });
+
+                // Actualizar el párrafo de totales
+                $('.carritoDetalle .totales p').text('Pagar: S/. ' + total.toFixed(2));
+            }
+
+            $(document).on('click', '.delete-btn', function() {
+                $(this).closest('.item').remove();
+                updateTotal();
+            });
+
+            /*
+            <div class="item">
+                <div class="image">
+                    <img src="images/icon/prod1.png" width="32px">
+                </div>
+                <div class="description">
+                    <p>Carne</p>
+                </div>
+                <div class="price">
+                    <p><span class="symbol">S/. </span><span class="value">10.00</span></p>
+                </div>
+                <div class="amount">
+                    <p><span class="value">1</span></p>
+                </div>
+                <div class="subtotal">
+                    <p><span class="symbol">S/. </span><span class="value">10.00</span></p>
+                </div>
+                <div class="delete">
+                    <button></button>
+                </div>
+            </div>
+            */
+        });
+    </script>
 </body>
 </html>
+
