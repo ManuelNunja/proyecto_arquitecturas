@@ -413,6 +413,71 @@ body{
                     }
                 }
             }
+            .contactanos{
+                width: 100%;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                h3{
+                    width: 100%;
+                    background-color: $color_amarillo;
+                    text-align: center;
+                }
+                .controles{
+                    width: 80%;
+                    display: flex;
+                    flex-direction: row;
+                    .formulario{
+                        width: 50%;
+                        padding: calc($pxSite * 2);
+                        form{
+                            width: 100%;
+                            display: flex;
+                            flex-direction: column;
+                            align-items: start;
+                            justify-content: start;
+                            gap: calc($pxSite * 1);
+                            label{
+                                font-weight: bold;
+                            }
+                            input{
+                                width: 80%;
+                                height: 32px;
+                                border-radius: $pxSite;
+                                border: solid 1px black;
+                            }
+                            textarea{
+                                width: 80%;
+                            }
+                            button{
+                                background-color: $color_amarillo;
+                                border-radius: $pxSite;
+                                width: calc($pxSite * 20);
+                                height: 50px;
+                            }
+                        }
+                    }
+                    .informacion{
+                        display: flex;
+                        flex-direction: column;
+                        align-items: center;
+                        justify-content: center;
+                        width: 50%;
+                        h3{
+                            background-color: transparent;
+                            color: $color_azul;
+                        }
+                        p{
+                            font-weight: bold;
+                        }
+                        .correo{
+                            color: $color_amarillo;
+                        }
+                    }
+                }
+                
+            }
         }
         footer{
             width: 100%;

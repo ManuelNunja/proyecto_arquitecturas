@@ -403,6 +403,70 @@ body .containerSite section .horario .dias div .activo {
     opacity: 1;
   }
 }
+body .containerSite section .contactanos {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+body .containerSite section .contactanos h3 {
+  width: 100%;
+  background-color: #ffc629;
+  text-align: center;
+}
+body .containerSite section .contactanos .controles {
+  width: 80%;
+  display: flex;
+  flex-direction: row;
+}
+body .containerSite section .contactanos .controles .formulario {
+  width: 50%;
+  padding: 16px;
+}
+body .containerSite section .contactanos .controles .formulario form {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  justify-content: start;
+  gap: 8px;
+}
+body .containerSite section .contactanos .controles .formulario form label {
+  font-weight: bold;
+}
+body .containerSite section .contactanos .controles .formulario form input {
+  width: 80%;
+  height: 32px;
+  border-radius: 8px;
+  border: solid 1px black;
+}
+body .containerSite section .contactanos .controles .formulario form textarea {
+  width: 80%;
+}
+body .containerSite section .contactanos .controles .formulario form button {
+  background-color: #ffc629;
+  border-radius: 8px;
+  width: 160px;
+  height: 50px;
+}
+body .containerSite section .contactanos .controles .informacion {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 50%;
+}
+body .containerSite section .contactanos .controles .informacion h3 {
+  background-color: transparent;
+  color: #1542d8;
+}
+body .containerSite section .contactanos .controles .informacion p {
+  font-weight: bold;
+}
+body .containerSite section .contactanos .controles .informacion .correo {
+  color: #ffc629;
+}
 body .containerSite footer {
   width: 100%;
   height: 192px;

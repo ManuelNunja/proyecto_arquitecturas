@@ -10,7 +10,7 @@
 </head>
 <body>
     <div class="containerSite">
-        <header>
+        <header class="header">
             <nav>
                 <div class="logo">
                     <img src="images/icon/logo1.png" width="48px">
@@ -26,6 +26,41 @@
                 <div></div>
             </nav>
         </header>
+        <section>
+            <div class="contactanos">
+                <h3>Contactanos</h3>
+                <div class="controles">
+                    <div class="formulario">
+                        <form action="/enviar_formulario" method="POST">
+                            <!-- Campo Nombres y Apellidos -->
+                            <label for="nombre">Nombres y Apellidos:</label>
+                            <input type="text" id="nombre" name="nombre" required>
+                            <label for="celular">Celular:</label>
+                            <input type="tel" id="celular" name="celular" pattern="[0-9]{10}" placeholder="Ej: 1234567890" required>
+                            <label for="correo">Correo Electrónico:</label>
+                            <input type="email" id="correo" name="correo" required>
+                            <label for="idea">Idea de Negocio:</label>
+                            <input type="text" id="idea" name="idea" required>
+                            <label for="ciudad">Ciudad:</label>
+                            <input type="text" id="ciudad" name="ciudad" required>
+                            <label for="mensaje">Mensaje:</label>
+                            <textarea id="mensaje" name="mensaje" rows="4" required></textarea>
+                            <button type="submit">Enviar</button>
+                          </form>
+                    </div>
+                    <div class="informacion">
+                        <h3>Canales de Contacto</h3>
+                        <p class="correo">servicioalcliente@minimarket.com</p>
+                        <p>Phone: 987 654 321</p>
+                        <p>Phone: 988 767 679</p>
+                    </div>
+                </div>
+
+            </div>
+            <div class="datos">
+
+            </div>
+        </section>
         <footer>
             <aside class="redes">
                 <p>¡Sigueme!</p>
