@@ -186,10 +186,10 @@
             <aside class="info">
                 <p>Servicio al cliente</p>
                 <p>Horario de atención: Lun - Dom de 8:00 am a 8:00 pm</p>
-                <p class="email">servicioalcliente@minimarket.com</p>
+                <p class="email">servicioalcliente@tiendasunidas.com</p>
             </aside>
         </footer>
-        <div class="copyright"><p>&copy; Minimarket 2024</p></div>
+        <div class="copyright"><p>&copy; Tiendas Unidas 2025</p></div>
     </div>
     <div class="whatsapp">
         <a href="https://api.whatsapp.com/send/?phone=%2B51920212623&text&type=phone_number&app_absent=0" target="_blank">
@@ -204,7 +204,46 @@
             
         </div>
         <div class="totales">
-            <p>Pagar: S/. 0.00</p>
+            <p id="checkout">Pagar: S/. 0.00</p>
+        </div>
+    </div>
+    <div class="pagoTarjeta">
+        <div class="header">
+            <p>Pagar con Tarjeta de Crédito</p>
+        </div>
+        <div class="formulario">
+            <div class="campo campo--img">
+                <img src="images/icon/creditCard.png" width="48px">
+            </div>
+            <div class="campo">
+                <label for="nombre">Nombre en la Tarjeta</label>
+                <input type="text" id="nombre" name="nombre">
+            </div>
+            <div class="campo">
+                <label for="numero">Número de Tarjeta</label>
+                <input type="text" id="numero" name="numero">
+            </div>
+            <div class="campo">
+                <label for="fecha">Fecha de Expiración</label>
+                <input type="text" id="fecha" name="fecha" placeholder="MM/AA">
+            </div>
+            <div class="campo">
+                <label for="cvv">CVV</label>
+                <input type="password" id="cvv" name="cvv">
+            </div>
+            <div class="boton">
+                <button class="pagar" id="pagar" disabled>Confirmar Pago</button>
+            </div>
+        </div>
+    </div>
+    <div id="resumenModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Resumen de la Compra</h2>
+            <div class="resumen-detalle">
+                <!-- Aquí se insertará el resumen de la compra -->
+            </div>
+            <button id="cerrarResumen">Cerrar</button>
         </div>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
@@ -212,7 +251,10 @@
         $(document).ready(function() {
             $('.carrito').click(function() {
                 if ($('.carritoDetalle').is(':hidden')) {
-                    var position = $(this).offset();
+                    if (!$('.pagoTarjeta').is(':hidden')) {
+                        $('.pagoTarjeta').fadeOut();
+                    } else {
+                        var position = $(this).offset();
                     $('.carritoDetalle')
                         .css({
                             position: 'fixed',
@@ -222,8 +264,10 @@
                             zIndex: 1000
                         })
                         .fadeIn();
+                    }                    
                 } else {
                     $('.carritoDetalle').fadeOut();
+                    $('.pagoTarjeta').fadeOut();
                 }
             });
 
@@ -309,6 +353,118 @@
             $(document).on('click', '.delete-btn', function() {
                 $(this).closest('.item').remove();
                 updateTotal();
+            });
+        });
+    </script>
+    <script>
+        $(document).ready(function() {
+            function checkFormFields() {
+                var allFilled = true;
+                $('#nombre, #numero, #fecha, #cvv').each(function() {
+                    if ($(this).val() === '') {
+                        allFilled = false;
+                    }
+                });
+                $('#pagar').prop('disabled', !allFilled);
+            }
+
+            $('#nombre, #numero, #fecha, #cvv').on('input', checkFormFields);
+
+            function updateTotal() {
+                var total = 0;
+                $('.carritoDetalle .lista .item').each(function() {
+                    var priceText = $(this).find('.price .value').text();
+                    var price = parseFloat(priceText.replace(/[^\d.-]/g, '')); // Convertir a número
+                    var amount = parseInt($(this).find('.amount .value').text()); // Obtener cantidad
+                    //console.log("amount: ", amount);
+                    total += price * amount; // Sumar al total
+                });
+
+                // Actualizar el párrafo de totales
+                $('.carritoDetalle .totales p').text('Pagar: S/. ' + total.toFixed(2));
+            }
+
+            $('#pagar').click(function() {
+                alert('Pago realizado con éxito');
+                $('.pagoTarjeta').fadeOut();
+
+                var resumenHtml = '';
+                var totalGeneral = 0;
+                $('.carritoDetalle .lista .item').each(function() {
+                    var productName = $(this).find('.description p').text();
+                    var productPrice = $(this).find('.price .value').text();
+                    var productAmount = $(this).find('.amount .value').text();
+                    var productSubtotal = $(this).find('.subtotal .value').text();
+
+                    totalGeneral += parseFloat(productSubtotal);
+
+                    resumenHtml += `
+                        <div class="resumen-item">
+                            <p><strong>Producto:</strong> ${productName}</p>
+                            <p><strong>Precio:</strong> S/. ${productPrice}</p>
+                            <p><strong>Cantidad:</strong> ${productAmount}</p>
+                            <p><strong>Subtotal:</strong> S/. ${productSubtotal}</p>
+                            <hr>
+                        </div>
+                    `;
+                });
+                resumenHtml += `<p><strong>Total General:</strong><b> S/. ${totalGeneral.toFixed(2)}<b></p>`;
+
+                $('.resumen-detalle').html(resumenHtml);
+                $('#resumenModal').fadeIn();
+
+                $('#nombre, #numero, #fecha, #cvv').val('');
+                $('.carritoDetalle .lista').empty();
+                updateTotal();
+            });
+    
+            $('#checkout').click(function() {
+
+                if ($('.carritoDetalle .lista .item').length > 0) {
+                    $('.carrito').trigger('click');
+                    if ($('.pagoTarjeta').is(':hidden')) {
+                        var position = $(this).offset();
+                        $('.pagoTarjeta')
+                        .css({
+                                position: 'fixed',
+                                display: 'flex',
+                                top: 110,
+                                left: position.left + 235,
+                                zIndex: 1000
+                            })
+                            .fadeIn();
+                    } else {
+                        $('.pagoTarjeta').fadeOut();
+                    }
+                } else {
+                    return false;
+                }
+
+                
+            });
+    
+            $(window).resize(function() {
+                if ($('.pagoTarjeta').is(':visible')) {
+                    var position = $('.carrito').offset();
+                    $('.pagoTarjeta').css({
+                        position: 'fixed',
+                        display: 'flex',
+                        top: 110,
+                        left: position.left - 285,
+                        zIndex: 1000
+                    });
+                }
+            });
+
+            $(document).click(function(event) {
+                if (!$(event.target).closest('.carrito, .carritoDetalle, #checkout, .pagoTarjeta, .delete-btn').length) {
+                    $('.carritoDetalle').fadeOut();
+                    $('.pagoTarjeta').fadeOut();
+                }
+            });
+
+            $('.close, #cerrarResumen').click(function() {
+                $('#resumenModal').fadeOut();
             });
         });
     </script>
